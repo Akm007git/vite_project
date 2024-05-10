@@ -1,3 +1,4 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -9,12 +10,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-// DB CONNECTION
+
 mongoose.connect(process.env.URL)
 app.get("/", (req, res) => {
     res.send("Hello");
 })
-// create an user
+
+
+// home route
+app.get("/", (req, res) => {
+    res.send("hi");
+}
+)
+
 app.post('/api/data', async (req, res) => {
     const data = await req.body;
     const { email, password, verifyPassword } = data;
@@ -65,3 +73,4 @@ app.post("/api/users", async (req, res) => {
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
 });
+
