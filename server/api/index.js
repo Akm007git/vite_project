@@ -2,14 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const user = require("./api/modules.js")
-
+require("dotenv").config();
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // DB CONNECTION
-mongoose.connect("mongodb+srv://anupkumarmahata4:3mKzuF9em2geT2Af@Users.mw9gwi1.mongodb.net/?retryWrites=true&w=majority&appName=Vite_project_Reg")
+mongoose.connect(process.env.URL)
 app.get("/", (req, res) => {
     res.send("Hello");
 })
