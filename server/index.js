@@ -11,6 +11,11 @@ app.use(bodyParser.json());
 // DB CONNECTION
 mongoose.connect("mongodb+srv://anupkumarmahata4:3mKzuF9em2geT2Af@Users.mw9gwi1.mongodb.net/?retryWrites=true&w=majority&appName=Vite_project_Reg")
 
+// home route
+app.get("/",(req,res) =>
+    {
+        res.send("hi");
+    }
 // create an user
 app.post('/data', async (req, res) => {
     const data = await req.body;
