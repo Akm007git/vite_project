@@ -8,8 +8,8 @@ export default defineConfig({
   {
     proxy:
     {
-      "/data": "https://vite-project-nine-iota.vercel.app/",
-      "/users": "https://vite-project-nine-iota.vercel.app/"
+      "/api/data": "https://vite-project-nine-iota.vercel.app/",
+      "/api/users": "https://vite-project-nine-iota.vercel.app/"
     }
   }
 })
