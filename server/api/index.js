@@ -10,9 +10,11 @@ app.use(bodyParser.json());
 
 // DB CONNECTION
 mongoose.connect("mongodb+srv://anupkumarmahata4:3mKzuF9em2geT2Af@Users.mw9gwi1.mongodb.net/?retryWrites=true&w=majority&appName=Vite_project_Reg")
-
+app.get("/", (req, res) => {
+    res.send("Hello");
+})
 // create an user
-app.post('/data', async (req, res) => {
+app.post('/api/data', async (req, res) => {
     const data = await req.body;
     const { email, password, verifyPassword } = data;
     // res.send("successfully completed!");
@@ -45,7 +47,7 @@ app.post('/data', async (req, res) => {
 
 // saving the data user endpoint
 
-app.post("/users", async (req, res) => {
+app.post("/api/users", async (req, res) => {
     const { email, password } = req.body;
     console.log(email, password);
 
