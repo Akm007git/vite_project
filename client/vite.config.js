@@ -8,8 +8,8 @@ export default defineConfig({
   {
     proxy:
     {
-      "/data": "http://localhost:3000",
-      "/users": "http://localhost:3000"
+      "/data": "https://vite-project-nine-iota.vercel.app/",
+      "/users": "https://vite-project-nine-iota.vercel.app/"
     }
   }
 })
